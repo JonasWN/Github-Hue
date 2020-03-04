@@ -1,0 +1,15 @@
+.top-heading {
+  font-weight: bold;
+  font-size: 1.75em;
+  margin: 5vh 0;
+}
+
+.hero-img img {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  filter: contrast(1.2);
+  margin-bottom: 15%;
+
+  justify-content: flex-start;
+}

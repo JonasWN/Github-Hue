@@ -28,6 +28,14 @@ Connect a Hue LED light to your Github account and track your activities via col
 
 ##### To be added....
 
+### Role Distrubution
+
+> Jonas - Github-dev-ops, Design, Front-end, Functionality
+
+> Benjamin - Design, Animations
+
+> Tobias - Kanban, Documentation, Functionality
+
 ---
 
 ## Requirements
