@@ -8,6 +8,13 @@
     "dev": "gulp dev",
     "build": "build"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "node test.js",
+      "pre-push": "npm test",
+      "...": "..."
+    }
+  },
   "author": "JonasWn",
   "license": "ISC",
   "dependencies": {
@@ -23,6 +30,12 @@
     "gulp-imagemin": "^6.2.0",
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.2",
-    "node-sass": "^4.13.0"
+    "https": "^1.0.0",
+    "https-proxy-agent": "^5.0.0",
+    "husky": "^4.2.3",
+    "node-fetch": "^2.6.0",
+    "node-hue-api": "^4.0.5",
+    "node-sass": "^4.13.0",
+    "url": "^0.11.0"
   }
 }
