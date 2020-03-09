@@ -10,8 +10,9 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "node test.js",
+      "pre-commit": "node commit-alert",
       "pre-push": "node push-alert",
+      "pre-rebase": "node rebase-alert",
       "...": "..."
     }
   },

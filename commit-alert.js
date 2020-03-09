@@ -1,8 +1,8 @@
 const v3 = require("node-hue-api").v3;
 const LightState = v3.lightStates.LightState;
-const USERNAME = "01VG3P0cqnyXEXhiUSSmYRpGXG9Xwfn6Bxlhnwvn",
+const USERNAME = "5k7o8TN2MDCRfxpFXGXXRlVsJRdOo10Mfs1ShA0O",
   // The name of the light we wish to retrieve by name
-  LIGHT_ID = 13;
+  LIGHT_ID = 4;
 v3.discovery
   .nupnpSearch()
   .then(searchResults => {
@@ -21,3 +21,5 @@ v3.discovery
   .then(result => {
     console.log(`Light state change was successful? ${result}`);
   });
+
+  console.log("commit works")
