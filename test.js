@@ -12,7 +12,7 @@ v3.discovery
   .then(api => {
     // Using a LightState object to build the desired state
     const state = new LightState()
-      .on(false)
+      .on(true)
       .ct(200)
       .brightness(50)
       .hue(30000);
