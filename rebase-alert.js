@@ -22,9 +22,11 @@ v3.discovery
     // Using a LightState object to build the desired state
     const state = new LightState()
 
-      .on(true)
+      .on(false)
       .xy(cie)
-      .brightness(colors.rebase.brightness);
+      .brightness(colors.rebase.brightness)
+      .alertShort()
+      .transitionSlow();
 
     return api.lights.setLightState(LIGHT_ID, state);
   })
