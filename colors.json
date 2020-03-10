@@ -1,0 +1,20 @@
+{
+  "commit": {
+    "r": 255,
+    "g": 0,
+    "b": 0,
+    "brightness": 50
+  },
+  "push": {
+    "r": 0,
+    "g": 255,
+    "b": 0,
+    "brightness": 254
+  },
+  "rebase": {
+    "r": 0,
+    "g": 0,
+    "b": 255,
+    "brightness": 25
+  }
+}

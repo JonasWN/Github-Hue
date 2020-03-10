@@ -1,9 +1,17 @@
 const v3 = require("node-hue-api").v3;
-const LightState = v3.lightStates.LightState;
+const colors = require("./colors.json");
+const colorConverter = require("./color-converter");
 
-const USERNAME = "vxqLmDqnSVpUbzNSTo7WljD0VlnqzORDTyuxtuZY",
+let cie = colorConverter.data.rgb_to_cie(
+  colors.push.r,
+  colors.push.g,
+  colors.push.b
+);
+
+const LightState = v3.lightStates.LightState;
+const USERNAME = "5k7o8TN2MDCRfxpFXGXXRlVsJRdOo10Mfs1ShA0O",
   // The name of the light we wish to retrieve by name
-  LIGHT_ID = 3;
+  LIGHT_ID = 4;
 
 v3.discovery
   .nupnpSearch()
@@ -14,14 +22,10 @@ v3.discovery
   .then(api => {
     // Using a LightState object to build the desired state
     const state = new LightState()
-      // .on(true)
-      //   .ct(200)
-      .brightness(50)
-      .sat(254)
-      .hue(60000)
-      .alertShort()
-      // .transitionFast()
-      
+      .on(true)
+      .xy(cie)
+      .brightness(colors.push.brightness);
+
     return api.lights.setLightState(LIGHT_ID, state);
   })
   .then(result => {

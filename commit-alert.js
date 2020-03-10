@@ -1,4 +1,13 @@
 const v3 = require("node-hue-api").v3;
+const colors = require("./colors.json");
+const colorConverter = require("./color-converter");
+
+let cie = colorConverter.data.rgb_to_cie(
+  colors.commit.r,
+  colors.commit.g,
+  colors.commit.b
+);
+
 const LightState = v3.lightStates.LightState;
 const USERNAME = "5k7o8TN2MDCRfxpFXGXXRlVsJRdOo10Mfs1ShA0O",
   // The name of the light we wish to retrieve by name
@@ -13,12 +22,11 @@ v3.discovery
     // Using a LightState object to build the desired state
     const state = new LightState()
       .on(true)
-      .ct(200)
-      .brightness(50)
-      .hue(30000);
+      .xy(cie)
+      .brightness(colors.commit.brightness);
     return api.lights.setLightState(LIGHT_ID, state);
   })
   .then(result => {
     console.log(`Light state change was successful? ${result}`);
   });
-console.log("commit works")
+console.log("commit works");
